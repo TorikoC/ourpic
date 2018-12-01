@@ -74,40 +74,99 @@
         </li>
       </ul>
       <div class="intro__thumbnails">
-        <img
-          srcset="
-            ./images/mountain-320.jpg 320w,
-            ./images/mountain-640.jpg 640w,
-            ./images/mountain-960.jpg 960w
-          "
-          sizes="100vw"
-          src="./images/mountain-960w.jpg"
-          class="
-          intro__image-1 intro__image intro__image--sm"
-          alt=""
-        />
-        <img
-          srcset="
-            ./images/sea-320.jpg 320w,
-            ./images/sea-640.jpg 640w,
-            ./images/sea-960.jpg 960w
-          "
-          sizes="100vw"
-          src="./images/sea-960.jpg"
-          class="intro__image-2 intro__image intro__image--sm"
-          alt=""
-        />
-        <img
-          srcset="
-            ./images/sky-320.jpg 320w,
-            ./images/sky-640.jpg 640w,
-            ./images/sky-960.jpg 960w
-          "
-          sizes="100vw"
-          src="./images/sky-960.jpg"
-          class="intro__image-3 intro__image"
-          alt=""
-        />
+        <picture class="intro__image-1 intro__image intro__image--sm">
+          <source
+            srcset="
+              ./images/mountain-320.webp 320w,
+              ./images/mountain-640.webp 640w,
+              ./images/mountain-960.webp 960w
+            "
+            sizes="100vw"
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./images/mountain-320.jpg 320w,
+              ./images/mountain-640.jpg 640w,
+              ./images/mountain-960.jpg 960w
+            "
+            sizes="100vw"
+            type="image/jpeg"
+          />
+          <img
+            srcset="
+              ./images/mountain-320.jpg 320w,
+              ./images/mountain-640.jpg 640w,
+              ./images/mountain-960.jpg 960w
+            "
+            sizes="100vw"
+            src="./images/mountain-960.jpg"
+            class=""
+            alt=""
+          />
+        </picture>
+        <picture class="intro__image-2 intro__image intro__image--sm">
+          <source
+            srcset="
+              ./images/sea-320.webp 320w,
+              ./images/sea-640.webp 640w,
+              ./images/sea-960.webp 960w
+            "
+            sizes="100vw"
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./images/sea-320.jpg 320w,
+              ./images/sea-640.jpg 640w,
+              ./images/sea-960.jpg 960w
+            "
+            sizes="100vw"
+            type="image/jpeg"
+          />
+          <img
+            srcset="
+              ./images/sea-320.jpg 320w,
+              ./images/sea-640.jpg 640w,
+              ./images/sea-960.jpg 960w
+            "
+            sizes="100vw"
+            src="./images/sea-960.jpg"
+            class=""
+            alt=""
+          />
+        </picture>
+        <picture class="intro__image-3 intro__image">
+          <source
+            srcset="
+              ./images/sky-320.webp 320w,
+              ./images/sky-640.webp 640w,
+              ./images/sky-960.webp 960w
+            "
+            sizes="100vw"
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./images/sky-320.jpg 320w,
+              ./images/sky-640.jpg 640w,
+              ./images/sky-960.jpg 960w
+            "
+            sizes="100vw"
+            type="image/jpeg"
+          />
+          <img
+            srcset="
+              ./images/sky-320.jpg 320w,
+              ./images/sky-640.jpg 640w,
+              ./images/sky-960.jpg 960w
+            "
+            sizes="100vw"
+            src="./images/sea-960.jpg"
+            class=""
+            alt=""
+          />
+        </picture>
       </div>
       <div style="clear: both;"></div>
     </div>
