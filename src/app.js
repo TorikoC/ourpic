@@ -1,5 +1,12 @@
 // built-in modules
 const path = require('path');
+const fs = require('fs');
+const http = require('http');
+
+const https = require('https');
+var privateKey = fs.readFileSync('./sslcert/private.key', 'utf8');
+var certificate = fs.readFileSync('./sslcert/certificate.crt', 'utf8');
+var credentials = { key: privateKey, cert: certificate };
 
 // third-party modules
 const express = require('express');
@@ -58,11 +65,16 @@ mongoose
   )
   .then(() => {
     console.log('db connected');
-    app.listen(SERVER_PORT, () => {
-      console.log(`server is listening on port ${SERVER_PORT}`);
+    const httpServer = http.createServer(app);
+    const httpsServer = https.createServer(credentials, app);
+    httpServer.listen(SERVER_PORT, () => {
+      console.log(`http server is listening on port ${SERVER_PORT}`);
       cronJob.start();
+    });
+    httpsServer.listen(443, () => {
+      console.log(`https server is listening on port 443`);
     });
   })
   .catch(error => {
-    console.error('db connection error', error);
+    console.error('error on db connection or starting server', error);
   });
