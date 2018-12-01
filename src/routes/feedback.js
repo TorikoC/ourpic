@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const FeedbackService = require('../services/feedback');
+const multer = require('multer');
 
-router.post('/api/feedbacks', (req, res) => {
+router.post('/api/feedbacks', multer().none(), (req, res) => {
   const { body } = req;
   FeedbackService.createFeedback(body)
     .then(result => {
