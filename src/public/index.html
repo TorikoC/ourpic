@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>OurPic</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <ul>
+        <li><a href="#upload">上传</a></li>
+        <li><a href="#intro">介绍</a></li>
+        <li><a href="#contact">反馈</a></li>
+      </ul>
+    </nav>
+    <div class="panel panel__upload" id="upload">
+      <label class="upload__button" for="image" tabindex="0">
+        <img
+          class="upload__icon upload__icon--waiting"
+          src="./images/cloud-upload-alt-solid.svg"
+          alt="cloud-upload-alt-solid"
+        />
+        <img
+          class="upload__icon upload__icon--uploading"
+          src="./images/spinner-solid.svg"
+          alt="spinner-solid"
+        />
+        <span>上传图片</span>
+        <input type="file" class="" name="image" id="image" accept="image/*" />
+      </label>
+    </div>
+    <div class="panel intro" id="intro">
+      <ul class="intro__list">
+        <li>
+          <img
+            src="./images/user-friends-solid.svg"
+            class="intro__icon"
+          />上传图片, 分享给家人、朋友, 或者在文档中引用 ...
+        </li>
+        <li>
+          <img src="./images/images-solid.svg" class="intro__icon" />gif, png,
+          jpeg, bmp, webp ...
+        </li>
+        <li>
+          <img
+            src="./images/truck-pickup-solid.svg"
+            class="intro__icon"
+          />图片大小限制: 5MB
+        </li>
+        <li>
+          <img
+            src="./images/clock-solid.svg"
+            class="intro__icon"
+          />自定义托管时间：1分钟, 1小时, 1天...
+        </li>
+        <li>
+          <img src="./images/heart-solid.svg" class="intro__icon" />完全免费
+        </li>
+      </ul>
+      <div class="intro__thumbnails">
+        <img
+          srcset="
+            ./images/mountain-320.jpg 320w,
+            ./images/mountain-640.jpg 640w,
+            ./images/mountain-960.jpg 960w
+          "
+          sizes="100vw"
+          src="./images/mountain-960w.jpg"
+          class="
+          intro__image-1 intro__image intro__image--sm"
+          alt=""
+        />
+        <img
+          srcset="
+            ./images/sea-320.jpg 320w,
+            ./images/sea-640.jpg 640w,
+            ./images/sea-960.jpg 960w
+          "
+          sizes="100vw"
+          src="./images/sea-960.jpg"
+          class="intro__image-2 intro__image intro__image--sm"
+          alt=""
+        />
+        <img
+          srcset="
+            ./images/sky-320.jpg 320w,
+            ./images/sky-640.jpg 640w,
+            ./images/sky-960.jpg 960w
+          "
+          sizes="100vw"
+          src="./images/sky-960.jpg"
+          class="intro__image-3 intro__image"
+          alt=""
+        />
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+    <div class="panel contact" id="contact">
+      <form class="contact__form">
+        <h1>意见反馈</h1>
+        <p><small> 有你的支持, ourpic 会变得更好. </small></p>
+        <div class="contact__form-group contact__form-group--inline">
+          <div>
+            <label class="contact__label" for="name">名字</label>
+            <input
+              class="contact__input"
+              type="text"
+              id="name"
+              name="name"
+              required
+            />
+          </div>
+          <div>
+            <label class="contact__label" for="email">邮箱</label>
+            <input
+              class="contact__input"
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+        </div>
+        <div class="contact__form-group">
+          <label class="contact__label" for="content">内容</label>
+          <textarea
+            class="contact__input contact__content"
+            name="content"
+            id="content"
+            cols="30"
+            rows="10"
+            placeholder="建议, 反馈BUG, 请求新的功能..."
+            required
+          ></textarea>
+        </div>
+        <div class="contact__form-group">
+          <button class="contact__button" type="submit">提交</button>
+        </div>
+      </form>
+    </div>
+    <div class="footer">
+      <a href="http://github.com/torikoc/ourpic">
+        <img src="./images/github-brands.svg" alt="github-brands" /> Github
+      </a>
+    </div>
+    <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </body>
+</html>

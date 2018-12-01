@@ -1,0 +1,26 @@
+.footer {
+  padding: 1.2em 1.6em;
+
+  text-align: center;
+}
+
+.footer a {
+  text-decoration: none;
+  font-size: 1.2em;
+}
+.footer a:visited {
+  color: #777;
+}
+.footer a:hover {
+  color: #333;
+}
+.footer a:active {
+  color: black;
+}
+
+.footer img {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: text-bottom;
+}

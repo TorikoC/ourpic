@@ -1,0 +1,115 @@
+.contact {
+  background: #eee;
+  padding: 1.2em 1.6em;
+  min-height: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contact__form {
+  align-self: center;
+  width: 50%;
+  textarea {
+    resize: none;
+    font-family: '微软雅黑', 'Microsoft Yahei';
+  }
+}
+.contact__form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__form-group + .contact__form-group {
+  margin-top: 0.4em;
+}
+
+.contact__form-group--inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  div {
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.contact__label {
+  color: #777;
+  margin-bottom: 0.2em;
+}
+
+.contact__input {
+  padding: 0.4em 0.6em;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555;
+
+  border: 1px solid #eee;
+  box-shadow: 1px 1px 10px 0 silver;
+}
+.contact__button {
+  padding: 0.4em 0.6em;
+  font-size: 1em;
+  font-weight: bold;
+
+  border: 1px solid black;
+  color: black;
+  background: white;
+
+  transition: all 0.3s;
+}
+.contact__button--disabled {
+  background: white !important;
+  border-color: #777 !important;
+  color: #777 !important;
+  cursor: wait !important;
+
+  img {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    vertical-align: middle;
+
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+.contact__button:hover {
+  cursor: pointer;
+  color: white;
+  background: black;
+}
+@media screen and (max-width: 640px) {
+  .contact__form {
+    width: 100%;
+  }
+  .contact__form-group--inline {
+    flex-direction: column;
+    div {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .contact__form {
+    width: 100%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

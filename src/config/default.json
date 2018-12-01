@@ -1,0 +1,6 @@
+{
+  "server_port": 3000,
+  "hash_length": 7,
+  "db_server": "mongodb://127.0.0.1:27017/ourpic",
+  "default_age": 300000
+}
