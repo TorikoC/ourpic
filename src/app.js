@@ -71,6 +71,7 @@ app.use(imageRouter);
 app.use(feedbackRouter);
 
 app.get('*', (req, res) => {
+  res.status(404);
   res.sendFile(path.join(__dirname, 'dist/404.html'));
 });
 
