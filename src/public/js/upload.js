@@ -14,7 +14,8 @@ const validTypes = [
   'image/png',
   'image/svg+xml',
   'image/x-icon',
-  'image/vnd.microsoft.icon'
+  'image/vnd.microsoft.icon',
+  'image/webp'
 ];
 
 function selectNodeText(node) {
