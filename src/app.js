@@ -2,11 +2,8 @@
 const path = require('path');
 const fs = require('fs');
 const http = require('http');
-
 const https = require('https');
-var privateKey = fs.readFileSync('./sslcert/private.key', 'utf8');
-var certificate = fs.readFileSync('./sslcert/certificate.crt', 'utf8');
-var credentials = { key: privateKey, cert: certificate };
+const compression = require('compression');
 
 // third-party modules
 const express = require('express');
@@ -18,7 +15,21 @@ const imageRouter = require('./routes/image');
 const feedbackRouter = require('./routes/feedback');
 const cronJob = require('./cron/index');
 
+var privateKey = fs.readFileSync('./sslcert/private.key', 'utf8');
+var certificate = fs.readFileSync('./sslcert/certificate.crt', 'utf8');
+var credentials = { key: privateKey, cert: certificate };
+
 const app = express();
+app.use(
+  compression({
+    filter: (req, res) => {
+      if (req.headers['x-no-compression']) {
+        return false;
+      }
+      return compression.filter(req, res);
+    }
+  })
+);
 
 console.log(`app is running under as ${process.env.NODE_ENV} mode.`);
 
