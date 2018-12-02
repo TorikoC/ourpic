@@ -2,8 +2,8 @@
 const path = require('path');
 const fs = require('fs');
 const http = require('http');
-const https = require('https');
 const compression = require('compression');
+const spdy = require('spdy');
 
 // third-party modules
 const express = require('express');
@@ -86,13 +86,13 @@ mongoose
   .then(() => {
     console.log('db connected');
     const httpServer = http.createServer(app);
-    const httpsServer = https.createServer(credentials, app);
+    const http2Server = spdy.createServer(credentials, app);
     httpServer.listen(SERVER_PORT, () => {
       console.log(`http server is listening on port ${SERVER_PORT}`);
       cronJob.start();
     });
-    httpsServer.listen(443, () => {
-      console.log(`https server is listening on port 443`);
+    http2Server.listen(443, () => {
+      console.log(`http2 server is listening on port 443`);
     });
   })
   .catch(error => {
