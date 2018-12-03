@@ -15,13 +15,29 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       title: 'OurPic',
-      template: path.join(__dirname, 'src', 'public/index.html')
+      template: path.join(__dirname, 'src', 'public/index.html'),
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
     }),
     new HtmlWebpackPlugin({
       filename: '404.html',
       title: 'OurPic-404',
       template: path.join(__dirname, 'src', 'public/404.html'),
-      chunks: ['404']
+      chunks: ['404'],
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
     })
   ],
   module: {
